@@ -29,5 +29,5 @@ function closeLightbox(){lightbox.classList.remove("open");lightbox.setAttribute
 lightbox.querySelectorAll("[data-lightbox-close]").forEach(button=>button.addEventListener("click",closeLightbox));lightbox.querySelector(".prev").addEventListener("click",()=>showLightbox(lightboxIndex-1));lightbox.querySelector(".next").addEventListener("click",()=>showLightbox(lightboxIndex+1));
 document.addEventListener("keydown",event=>{if(event.key==="Escape"){closeLightbox();closeModals()}if(lightbox.classList.contains("open")&&event.key==="ArrowLeft")showLightbox(lightboxIndex-1);if(lightbox.classList.contains("open")&&event.key==="ArrowRight")showLightbox(lightboxIndex+1)});
 
-// A short tattoo reveal runs once per browser session.
-const introLoader=document.getElementById("introLoader");const finishIntro=()=>{introLoader.classList.add("done");document.body.classList.remove("is-loading")};if(sessionStorage.getItem("tattooIntroSeen")){finishIntro()}else{sessionStorage.setItem("tattooIntroSeen","1");setTimeout(finishIntro,2650)}
+// The studio signature reveal runs on every fresh page load.
+const introLoader=document.getElementById("introLoader");const finishIntro=()=>{introLoader.classList.add("done");document.body.classList.remove("is-loading")};setTimeout(finishIntro,2800)
