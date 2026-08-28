@@ -1,5 +1,5 @@
 const SUPABASE_URL="https://wtasyklliiwokxhvrhsq.supabase.co";
-const SUPABASE_KEY="__SUPABASE_PUBLISHABLE_KEY__";
+const SUPABASE_KEY="sb_publishable_-DHeEV3iTSOp-Vha03M5RA_MVUUk-s5";
 const sb=supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 const LOGIN="tattooizabella",ADMIN_EMAIL="admin@tattooizabella.studio";
