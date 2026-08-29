@@ -31,4 +31,4 @@ lightbox.querySelectorAll("[data-lightbox-close]").forEach(button=>button.addEve
 document.addEventListener("keydown",event=>{if(event.key==="Escape"){closeLightbox();closeModals()}if(lightbox.classList.contains("open")&&event.key==="ArrowLeft")showLightbox(lightboxIndex-1);if(lightbox.classList.contains("open")&&event.key==="ArrowRight")showLightbox(lightboxIndex+1)});
 
 // The studio signature reveal runs on every fresh page load.
-const introLoader=document.getElementById("introLoader");const finishIntro=()=>{introLoader.classList.add("done");document.body.classList.remove("is-loading")};setTimeout(finishIntro,2250)
+const introLoader=document.getElementById("introLoader");const finishIntro=()=>{introLoader.classList.add("done");document.body.classList.remove("is-loading")};setTimeout(finishIntro,3300)
