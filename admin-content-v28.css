@@ -1,0 +1,127 @@
+textarea {
+  width: 100%;
+  resize: vertical;
+  background: #151515;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 14px;
+  outline: 0;
+  font: 14px/1.55 Arial, sans-serif;
+}
+
+textarea:focus { border-color: var(--red); }
+
+.editor-card {
+  display: grid;
+  gap: 28px;
+  padding: clamp(22px, 3vw, 38px);
+  border: 1px solid var(--line);
+  background: radial-gradient(circle at 95% 0, #6b172027, transparent 30%), linear-gradient(145deg, #151313, #0e0e0e);
+  box-shadow: 0 25px 65px #0005;
+}
+
+.editor-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.editor-heading b { display: block; font: 26px Georgia, serif; }
+.editor-heading small { display: block; margin-top: 6px; color: #777; }
+.editor-icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: linear-gradient(135deg, #bd172a, #5f111b); font-size: 24px; }
+
+.language-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.language-grid fieldset { min-width: 0; margin: 0; padding: 20px; border: 1px solid #ffffff17; background: #08080870; }
+.language-grid legend { padding: 0 8px; color: #e8e0d8; font: 18px Georgia, serif; }
+.language-grid label + label { margin-top: 16px; }
+
+.stats-editor { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.stats-editor input { font: 28px Georgia, serif; }
+.save-wide { justify-self: start; min-width: 280px; }
+
+.subsection-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin: 44px 0 20px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.subsection-head h3 { margin: 0 0 7px; font: 30px Georgia, serif; }
+.subsection-head p { margin: 0; color: #777; font-size: 12px; }
+
+.manager-list { display: grid; gap: 12px; }
+.manager-card {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 16px 18px;
+  border: 1px solid #ffffff16;
+  background: linear-gradient(135deg, #151515, #0d0d0d);
+}
+
+.manager-mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #251015;
+  border: 1px solid #70212a;
+  color: #f0dfe1;
+  font: 700 15px Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.manager-mark img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.manager-copy { min-width: 0; }
+.manager-copy b { display: block; overflow-wrap: anywhere; font: 22px Georgia, serif; }
+.manager-copy small { display: block; margin-top: 6px; color: #777; line-height: 1.35; overflow-wrap: anywhere; }
+.manager-copy a { color: #c9bfc0; }
+.manager-actions { display: flex; gap: 8px; }
+.manager-actions button { min-height: 40px; border: 1px solid #444; background: none; color: #bbb; padding: 9px 13px; cursor: pointer; }
+.manager-actions .danger { color: #e37680; border-color: #6b252b; }
+.compact-empty { padding: 46px 20px; }
+
+.social-type-instagram .manager-mark { background: linear-gradient(135deg, #6633c4, #cf2f78, #ef7b29); border: 0; }
+.social-type-facebook .manager-mark { background: #1877f2; border: 0; }
+.social-type-whatsapp .manager-mark { background: #20b85a; border: 0; }
+.social-type-telegram .manager-mark { background: #229ed9; border: 0; }
+.social-type-youtube .manager-mark { background: #e60000; border: 0; }
+.social-type-tiktok .manager-mark { background: #111; border-color: #20d5ec; box-shadow: inset -3px 0 #ff2d55; }
+
+@media (max-width: 1100px) {
+  .language-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  :root { --mobile-admin-nav-height: 126px; }
+  .panel aside nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .panel aside nav button { min-height: 53px; padding-inline: 2px; }
+  .panel aside nav span { font-size: 8.7px; line-height: 1.08; }
+  .editor-card { gap: 20px; padding: 18px; }
+  .editor-heading b { font-size: 22px; }
+  .language-grid { gap: 12px; }
+  .language-grid fieldset { padding: 16px 13px; }
+  .stats-editor { grid-template-columns: 1fr; gap: 12px; }
+  .save-wide { width: 100%; min-width: 0; min-height: 50px; }
+  .subsection-head { display: grid; align-items: stretch; margin-top: 32px; padding-top: 28px; }
+  .subsection-head .primary { width: 100%; min-height: 50px; }
+  .manager-card { grid-template-columns: 48px minmax(0, 1fr); gap: 13px; padding: 15px; }
+  .manager-mark { width: 46px; height: 46px; }
+  .manager-copy b { font-size: 19px; }
+  .manager-actions { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+  .manager-actions button { min-height: 46px; }
+  #certificateDialog form,
+  #socialDialog form { padding-bottom: 28px; }
+}
+
+@media (max-width: 370px) {
+  .panel aside nav span { font-size: 7.8px; }
+}

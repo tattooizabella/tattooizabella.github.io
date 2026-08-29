@@ -1,0 +1,58 @@
+.artist-modal-copy { overflow-y: auto; }
+.artist-modal-stats b > span { display: block; }
+
+.artist-certificates {
+  margin-top: 2px;
+  padding-top: 22px;
+  border-top: 1px solid #ffffff20;
+}
+
+.artist-certificates[hidden] { display: none; }
+.artist-certificates h3 { margin: 0 0 13px; color: #aaa; font: 700 9px/1.3 "Noto Sans Armenian", Arial, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+.artist-certificates > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+
+.artist-certificate {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #ffffff18;
+  background: linear-gradient(135deg, #ffffff08, #a9132008);
+  color: #fff;
+}
+
+.artist-certificate:hover { border-color: #9d2633; background: #4a1118; }
+.artist-certificate > span { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; overflow: hidden; background: #781722; color: #fff; font-weight: 800; }
+.artist-certificate img { width: 100%; height: 100%; object-fit: cover; }
+.artist-certificate b { display: block; min-width: 0; color: #fff; font: 600 12px/1.3 "Noto Sans Armenian", Arial, sans-serif; overflow-wrap: anywhere; }
+.artist-certificate small { display: block; margin-top: 4px; color: #aaa; font: 9px Arial, sans-serif; }
+
+.social-rail a.social-instagram { background: linear-gradient(115deg,#5b2dcc,#c52a78 52%,#ef7b28); }
+.social-rail a.social-facebook { background: #1877f2; }
+.social-rail a.social-tiktok { background: linear-gradient(110deg,#111 25%,#20d5ec 26% 31%,#111 32% 67%,#ff2d55 68% 74%,#111 75%); }
+.social-rail a.social-youtube { background: #f00000; }
+.social-rail a.social-telegram { background: #229ed9; }
+.social-rail a.social-whatsapp { background: #20b85a; }
+.social-rail a.social-phone { background: #a91320; }
+.social-rail a.social-other { background: linear-gradient(115deg,#33262a,#8c2330); }
+
+.contact-cards a.social-instagram .contact-icon { background: linear-gradient(135deg,#6935c7,#d12c77,#ef7c2e); color:#fff; }
+.contact-cards a.social-facebook .contact-icon { background:#1877f2; color:#fff; }
+.contact-cards a.social-tiktok .contact-icon { background:#111; color:#fff; box-shadow:inset 2px 0 #20d5ec,inset -2px 0 #ff2d55; }
+.contact-cards a.social-youtube .contact-icon { background:#f00000; color:#fff; }
+.contact-cards a.social-telegram .contact-icon { background:#229ed9; color:#fff; }
+.contact-cards a.social-whatsapp .contact-icon { background:#20b85a; color:#fff; }
+.contact-cards a.social-phone .contact-icon { background:#9e1622; color:#fff; }
+.contact-cards a.social-other .contact-icon { background:#55202a; color:#fff; }
+
+.contact-cards:empty { display: block; padding: 24px; color: #aaa; text-align: center; }
+.contact-cards:empty:after { content: "—"; }
+
+@media(max-width:700px) {
+  .artist-modal-copy { overflow-y: auto; }
+  .artist-certificates { padding-bottom: 18px; }
+  .artist-certificates > div { grid-template-columns: 1fr; }
+  .artist-certificate { min-height: 60px; }
+}
