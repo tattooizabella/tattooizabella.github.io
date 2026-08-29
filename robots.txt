@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tattooizabella.github.io/sitemap.xml
