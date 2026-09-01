@@ -38,7 +38,16 @@ const TRAINING_DEFAULTS = {
   training_duration_ru:"По программе",
   training_duration_hy:"Ըստ ծրագրի",
   training_duration_en:"Program-based",
-  training_price_from:"0"
+  training_price_from:"0",
+  training_details_ru:"",
+  training_details_hy:"",
+  training_details_en:"",
+  training_file_label_ru:"Скачать программу курса",
+  training_file_label_hy:"Ներբեռնել դասընթացի ծրագիրը",
+  training_file_label_en:"Download course program",
+  training_file_url:"",
+  training_file_name:"",
+  training_file_path:""
 };
 
 let artistCertificates = [];
@@ -72,6 +81,16 @@ function hydrateTrainingForm() {
   const form = $("#trainingForm");
   if (!form) return;
   for (const [key, fallback] of Object.entries(TRAINING_DEFAULTS)) form.elements[key].value = settings[key] ?? fallback;
+  renderTrainingFile();
+}
+
+function renderTrainingFile() {
+  const box = $("#trainingFileCurrent"), link = $("#trainingFileLink");
+  if (!box || !link) return;
+  const url = settings.training_file_url || "";
+  box.hidden = !url;
+  link.href = url || "#";
+  link.textContent = url ? `Открыть: ${settings.training_file_name || "материал курса"} ↗` : "";
 }
 
 $("#trainingForm").onsubmit = async event => {
@@ -81,14 +100,56 @@ $("#trainingForm").onsubmit = async event => {
   const values = {};
   for (const key of Object.keys(TRAINING_DEFAULTS)) values[key] = form.elements[key].value.trim();
   button.disabled = true;
+  const status = $("#trainingFileStatus"), file = form.elements.training_file_upload.files[0];
+  let uploadedPath = "";
+  const previousPath = settings.training_file_path || "";
   try {
+    if (file) {
+      const allowed = /\.(pdf|jpe?g|png|webp|docx?|txt)$/i.test(file.name);
+      if (!allowed) throw new Error("Поддерживаются PDF, изображения, Word и TXT");
+      if (file.size > 20 * 1024 * 1024) throw new Error("Файл больше 20 МБ");
+      status.className = "upload-status working";
+      status.textContent = `Загрузка: ${file.name}`;
+      uploadedPath = `training/${Date.now()}-${crypto.randomUUID()}-${file.name.replace(/[^a-zA-Z0-9._-]/g, "-")}`;
+      const uploaded = await sb.storage.from("portfolio").upload(uploadedPath, file, {cacheControl:"3600", contentType:file.type || undefined, upsert:false});
+      if (uploaded.error) throw uploaded.error;
+      values.training_file_url = sb.storage.from("portfolio").getPublicUrl(uploadedPath).data.publicUrl;
+      values.training_file_name = file.name;
+      values.training_file_path = uploadedPath;
+    }
     await saveSettingsValues(values);
+    if (uploadedPath && previousPath && previousPath !== uploadedPath) await sb.storage.from("portfolio").remove([previousPath]);
+    form.elements.training_file_upload.value = "";
+    status.className = "upload-status success";
+    status.textContent = file ? "Файл загружен и опубликован" : "";
+    renderTrainingFile();
     toast("Раздел обучения обновлён");
   } catch (error) {
     console.error(error);
+    if (uploadedPath) await sb.storage.from("portfolio").remove([uploadedPath]);
+    status.className = "upload-status error";
+    status.textContent = error.message || "Не удалось загрузить файл";
     toast("Не удалось сохранить обучение");
   } finally {
     button.disabled = false;
+  }
+};
+
+$("#removeTrainingFile").onclick = async () => {
+  const path = settings.training_file_path || "";
+  if (!settings.training_file_url || !confirm("Удалить прикреплённый материал обучения?")) return;
+  try {
+    await saveSettingsValues({training_file_url:"", training_file_name:"", training_file_path:""});
+    if (path) await sb.storage.from("portfolio").remove([path]);
+    const form = $("#trainingForm");
+    form.elements.training_file_url.value = "";
+    form.elements.training_file_name.value = "";
+    form.elements.training_file_path.value = "";
+    renderTrainingFile();
+    toast("Файл обучения удалён");
+  } catch (error) {
+    console.error(error);
+    toast("Не удалось удалить файл");
   }
 };
 

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="admin.css">
   <link rel="stylesheet" href="admin-extra-v25.css">
   <link rel="stylesheet" href="admin-mobile-v27.css">
-  <link rel="stylesheet" href="admin-content-v28.css?v=35">
+  <link rel="stylesheet" href="admin-content-v28.css?v=37">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
@@ -94,11 +94,18 @@
           <div class="editor-heading"><span class="editor-icon">✦</span><div><b>Курс татуировки</b><small>Все изменения сразу появятся на сайте</small></div></div>
           <label class="training-visibility">Показывать раздел на сайте<select name="training_enabled"><option value="true">Да, показывать</option><option value="false">Нет, скрыть</option></select></label>
           <div class="language-grid">
-            <fieldset><legend>Русский</legend><label>Заголовок<input name="training_title_ru" required></label><label>Описание<textarea name="training_text_ru" rows="5" required></textarea></label><label>Программа — каждый пункт с новой строки<textarea name="training_program_ru" rows="6"></textarea></label><label>Формат<input name="training_format_ru"></label><label>Длительность<input name="training_duration_ru"></label></fieldset>
-            <fieldset><legend>Հայերեն</legend><label>Վերնագիր<input name="training_title_hy" required></label><label>Նկարագրություն<textarea name="training_text_hy" rows="5" required></textarea></label><label>Ծրագիր — յուրաքանչյուր կետը նոր տողից<textarea name="training_program_hy" rows="6"></textarea></label><label>Ձևաչափ<input name="training_format_hy"></label><label>Տևողություն<input name="training_duration_hy"></label></fieldset>
-            <fieldset><legend>English</legend><label>Title<input name="training_title_en" required></label><label>Description<textarea name="training_text_en" rows="5" required></textarea></label><label>Program — one item per line<textarea name="training_program_en" rows="6"></textarea></label><label>Format<input name="training_format_en"></label><label>Duration<input name="training_duration_en"></label></fieldset>
+            <fieldset><legend>Русский</legend><label>Заголовок<input name="training_title_ru" required></label><label>Краткое описание<textarea name="training_text_ru" rows="5" required></textarea></label><label>Программа — каждый пункт с новой строки<textarea name="training_program_ru" rows="6"></textarea></label><label>Дополнительная информация<textarea name="training_details_ru" rows="6" placeholder="Как проходит обучение, кому подходит, что получит ученик"></textarea></label><label>Название кнопки файла<input name="training_file_label_ru" placeholder="Скачать программу курса"></label><label>Формат<input name="training_format_ru"></label><label>Длительность<input name="training_duration_ru"></label></fieldset>
+            <fieldset><legend>Հայերեն</legend><label>Վերնագիր<input name="training_title_hy" required></label><label>Կարճ նկարագրություն<textarea name="training_text_hy" rows="5" required></textarea></label><label>Ծրագիր — յուրաքանչյուր կետը նոր տողից<textarea name="training_program_hy" rows="6"></textarea></label><label>Լրացուցիչ տեղեկություն<textarea name="training_details_hy" rows="6" placeholder="Ինչպես է անցնում ուսուցումը և ում համար է այն"></textarea></label><label>Ֆայլի կոճակի անվանումը<input name="training_file_label_hy" placeholder="Ներբեռնել դասընթացի ծրագիրը"></label><label>Ձևաչափ<input name="training_format_hy"></label><label>Տևողություն<input name="training_duration_hy"></label></fieldset>
+            <fieldset><legend>English</legend><label>Title<input name="training_title_en" required></label><label>Short description<textarea name="training_text_en" rows="5" required></textarea></label><label>Program — one item per line<textarea name="training_program_en" rows="6"></textarea></label><label>Additional information<textarea name="training_details_en" rows="6" placeholder="How the training works, who it is for and what students receive"></textarea></label><label>File button title<input name="training_file_label_en" placeholder="Download course program"></label><label>Format<input name="training_format_en"></label><label>Duration<input name="training_duration_en"></label></fieldset>
           </div>
           <div class="stats-editor training-price-editor"><label>Цена обучения «от», ֏<input name="training_price_from" type="number" min="0" placeholder="Оставьте 0 — по консультации"></label></div>
+          <div class="training-file-editor">
+            <div><b>Материал для учеников</b><small>PDF, JPG, PNG, WEBP, DOC, DOCX или TXT — до 20 МБ</small></div>
+            <label class="file-button training-file-button">Выбрать или заменить файл<input name="training_file_upload" type="file" accept="application/pdf,image/jpeg,image/png,image/webp,.pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.txt,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain"></label>
+            <div id="trainingFileCurrent" class="training-file-current" hidden><a id="trainingFileLink" target="_blank" rel="noopener">Открыть прикреплённый файл ↗</a><button id="removeTrainingFile" class="danger" type="button">Удалить файл</button></div>
+            <p id="trainingFileStatus" class="upload-status" aria-live="polite"></p>
+          </div>
+          <input name="training_file_url" type="hidden"><input name="training_file_name" type="hidden"><input name="training_file_path" type="hidden">
           <button class="primary save-wide" type="submit">Сохранить обучение</button>
         </form>
       </section>
@@ -186,6 +193,6 @@
 
   <div id="toast"></div>
   <script src="admin-v25.js?v=34"></script>
-  <script src="admin-settings-v28.js?v=35"></script>
+  <script src="admin-settings-v28.js?v=37"></script>
 </body>
 </html>

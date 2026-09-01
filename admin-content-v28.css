@@ -135,6 +135,22 @@ textarea:focus { border-color: var(--red); }
 .training-visibility { max-width: 320px; }
 .training-price-editor { max-width: 420px; }
 .training-price-editor input { font-size: 22px; }
+.training-file-editor { display: grid; grid-template-columns:minmax(0,1fr) auto; gap:14px 22px; align-items:center; padding:22px; border:1px solid #ffffff18; background:linear-gradient(120deg,#090909,#1d1012); }
+.training-file-editor b { display:block; font:22px Georgia,serif; }
+.training-file-editor small { display:block; margin-top:7px; color:#888; line-height:1.4; }
+.training-file-button { align-self:center; }
+.training-file-current { grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 16px; border:1px solid #6f2730; background:#2a1115; }
+.training-file-current[hidden] { display:none; }
+.training-file-current a { color:#fff; overflow-wrap:anywhere; }
+.training-file-current button { min-height:40px; border:1px solid #7c2a34; background:transparent; color:#ef7b87; padding:9px 14px; cursor:pointer; }
+.training-file-editor .upload-status { grid-column:1/-1; margin:0; }
+
+@media (max-width: 640px) {
+  .training-file-editor { grid-template-columns:1fr; padding:17px; }
+  .training-file-button { width:100%; text-align:center; }
+  .training-file-current { display:grid; }
+  .training-file-current button { width:100%; }
+}
 
 @media (max-width: 540px) {
   :root { --mobile-admin-nav-height: 126px; }
