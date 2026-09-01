@@ -32,6 +32,10 @@
 .training-card > div:last-child { border: 0; }
 .training-card small { display: block; margin-bottom: 8px; color: #8f8687; font: 700 9px/1.2 "Noto Sans Armenian",Arial,sans-serif; letter-spacing: .16em; }
 .training-card strong { display: block; color: #fff; font: 26px/1.15 Georgia,"Noto Serif Armenian",serif; }
+.training-application-panel { width: min(820px,calc(100vw - 24px)); }
+.training-application-panel:before { background: radial-gradient(circle at 82% 34%,#a913201e,transparent 34%),url('logo.jpg') 94% 48%/50% auto no-repeat; opacity: .11; }
+.training-application-panel form { max-width: 700px; }
+.training-application-panel input[type=email] { text-transform: none; }
 
 @media(max-width:900px) {
   .training-layout { grid-template-columns: 1fr; }
