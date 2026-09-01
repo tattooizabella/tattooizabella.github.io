@@ -1,4 +1,17 @@
 .artist-modal-copy { overflow-y: auto; }
+.work video { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, filter .5s ease; }
+.work:hover video { transform: scale(1.035); filter: brightness(.72); }
+.work-play { position: absolute; z-index: 2; left: 50%; top: 50%; display: grid; place-items: center; width: 58px; height: 58px; border: 1px solid #ffffff88; border-radius: 50%; background: #a91320dd; color: #fff; font: 18px/1 Arial, sans-serif; transform: translate(-50%,-50%); box-shadow: 0 12px 35px #0008; }
+.lightbox figure video { max-width: 100%; max-height: 84svh; background: #000; box-shadow: 0 25px 100px #000; }
+.lightbox figure video[hidden], .lightbox figure img[hidden] { display: none; }
+.video-section { position: relative; overflow: hidden; color: #f7f2ea; background: radial-gradient(circle at 20% 0,#65162055,transparent 35%),linear-gradient(145deg,#12090b,#050505 70%); border-bottom: 1px solid #35151a; }
+.video-section:before { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(116deg,transparent 0 118px,#ffffff05 119px 120px),url('logo.jpg') 90% 40%/min(50vw,680px) auto no-repeat; filter: grayscale(1); opacity: .07; }
+.video-section > * { position: relative; }
+.video-section .section-head > p { color: #bdb4b5; }
+.video-gallery .work { aspect-ratio: 9/16; border: 1px solid #ffffff1b; border-radius: 4px; background: #100d0e; box-shadow: 0 24px 60px #000b; }
+.video-gallery .work:after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg,transparent 55%,#000a); }
+.video-gallery .work-play { z-index: 3; }
+.video-gallery .work > b { z-index: 3; }
 .artist-modal-stats b > span { display: block; }
 
 .artist-certificates {
