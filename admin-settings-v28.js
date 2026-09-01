@@ -21,6 +21,26 @@ const ARTIST_DEFAULTS = {
   artist_approach_count:"100%"
 };
 
+const TRAINING_DEFAULTS = {
+  training_enabled:"true",
+  training_title_ru:"Индивидуальное обучение татуировке",
+  training_title_hy:"Անհատական դաջվածքի ուսուցում",
+  training_title_en:"Private tattoo training",
+  training_text_ru:"Практическое обучение с мастером — от основ и оборудования до уверенной самостоятельной работы.",
+  training_text_hy:"Գործնական ուսուցում վարպետի հետ՝ հիմունքներից և սարքավորումից մինչև վստահ ինքնուրույն աշխատանք։",
+  training_text_en:"Hands-on training with the artist — from fundamentals and equipment to confident independent work.",
+  training_program_ru:"Безопасность и стерильность\nОборудование и настройка машинки\nПостроение эскиза и перенос\nПрактика техники под контролем мастера",
+  training_program_hy:"Անվտանգություն և ստերիլություն\nՍարքավորում և մեքենայի կարգավորում\nԷսքիզի կառուցում և փոխանցում\nՏեխնիկայի գործնական աշխատանք վարպետի հսկողությամբ",
+  training_program_en:"Safety and sterilization\nEquipment and machine setup\nDesign and stencil transfer\nSupervised technique practice",
+  training_format_ru:"Индивидуально · Ереван",
+  training_format_hy:"Անհատական · Երևան",
+  training_format_en:"Private · Yerevan",
+  training_duration_ru:"По программе",
+  training_duration_hy:"Ըստ ծրագրի",
+  training_duration_en:"Program-based",
+  training_price_from:"0"
+};
+
 let artistCertificates = [];
 let socialLinks = [];
 
@@ -43,9 +63,34 @@ async function refreshExtraSettings() {
   artistCertificates = parseSettingList(settings.artist_certificates, []);
   socialLinks = settings.social_links === undefined ? SOCIAL_DEFAULTS.map(item => ({...item})) : parseSettingList(settings.social_links, []);
   hydrateArtistForm();
+  hydrateTrainingForm();
   renderCertificates();
   renderSocials();
 }
+
+function hydrateTrainingForm() {
+  const form = $("#trainingForm");
+  if (!form) return;
+  for (const [key, fallback] of Object.entries(TRAINING_DEFAULTS)) form.elements[key].value = settings[key] ?? fallback;
+}
+
+$("#trainingForm").onsubmit = async event => {
+  event.preventDefault();
+  const form = event.target;
+  const button = form.querySelector('[type="submit"]');
+  const values = {};
+  for (const key of Object.keys(TRAINING_DEFAULTS)) values[key] = form.elements[key].value.trim();
+  button.disabled = true;
+  try {
+    await saveSettingsValues(values);
+    toast("Раздел обучения обновлён");
+  } catch (error) {
+    console.error(error);
+    toast("Не удалось сохранить обучение");
+  } finally {
+    button.disabled = false;
+  }
+};
 
 async function saveSettingsValues(values) {
   const rows = Object.entries(values).map(([key, value]) => ({key, value:String(value ?? "")}));

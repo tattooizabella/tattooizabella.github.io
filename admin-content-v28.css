@@ -132,6 +132,9 @@ textarea:focus { border-color: var(--red); }
 .instagram-video-preview { display: grid; place-items: center; width: 100%; aspect-ratio: 3/4; padding: 28px; color: #fff; text-decoration: none; text-align: center; background: radial-gradient(circle at 30% 20%,#d82d75,transparent 32%),linear-gradient(145deg,#522bc5,#bd256d 52%,#ed702b); }
 .instagram-video-preview strong { display: block; font: 28px Georgia,serif; }
 .instagram-video-preview small { display: block; margin-top: 10px; color: #fff; font: 700 9px/1.4 Arial,sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.training-visibility { max-width: 320px; }
+.training-price-editor { max-width: 420px; }
+.training-price-editor input { font-size: 22px; }
 
 @media (max-width: 540px) {
   :root { --mobile-admin-nav-height: 126px; }
