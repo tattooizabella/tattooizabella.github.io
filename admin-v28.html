@@ -77,7 +77,7 @@
       </section>
 
       <section id="videos" class="view">
-        <div class="toolbar"><div><h3>Видеогалерея</h3><p>Процесс работы, готовые татуировки и короткие ролики.</p></div><button class="primary" id="addVideo">+ Добавить видео</button></div>
+        <div class="toolbar"><div><h3>Видеогалерея</h3><p>Загружайте ролики с устройства или добавляйте публичные Reels по ссылке.</p></div><div class="toolbar-actions"><button class="secondary" id="addInstagramVideo">+ Reel из Instagram</button><button class="primary" id="addVideo">+ Загрузить видео</button></div></div>
         <div id="videoGrid" class="portfolio-grid video-admin-grid"></div>
         <div id="emptyVideos" class="empty">Пока нет загруженных видео</div>
       </section>
@@ -137,6 +137,7 @@
 
   <dialog id="workDialog"><form id="workForm"><button type="button" class="close">×</button><p class="eyebrow">НОВАЯ РАБОТА</p><h3>Добавить фото</h3><label>Название<input name="title" placeholder="Например: Black & Grey sleeve"></label><label>Категория<select name="category"><option>Black & Grey</option><option>Realism</option><option>Lettering</option><option>Cover-up</option><option>Minimal</option></select></label><label>Фотографии с устройства<input name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif" multiple required></label><small class="hint">Можно выбрать сразу несколько фотографий.</small><p id="uploadStatus" class="upload-status" aria-live="polite"></p><button class="primary" type="submit">Загрузить фотографии</button></form></dialog>
   <dialog id="videoDialog"><form id="videoForm"><button type="button" class="close">×</button><p class="eyebrow">НОВОЕ ВИДЕО</p><h3>Добавить в видеогалерею</h3><label>Название<input name="title" placeholder="Например: Процесс Black & Grey"></label><label>Категория<select name="category"><option>Процесс</option><option>Готовая работа</option><option>Black & Grey</option><option>Realism</option><option>Cover-up</option></select></label><label>Видео с устройства<input name="image" type="file" accept="video/mp4,video/webm,video/quicktime,.mp4,.webm,.mov" multiple required></label><small class="hint">MP4, MOV или WEBM. Максимум 50 МБ на один ролик.</small><p id="videoUploadStatus" class="upload-status" aria-live="polite"></p><button class="primary" type="submit">Загрузить видео</button></form></dialog>
+  <dialog id="instagramVideoDialog"><form id="instagramVideoForm"><button type="button" class="close">×</button><p class="eyebrow">INSTAGRAM REEL</p><h3>Добавить видео по ссылке</h3><label>Название<input name="title" placeholder="Например: Процесс создания татуировки"></label><label>Категория<select name="category"><option>Instagram Reel</option><option>Процесс</option><option>Готовая работа</option><option>Black & Grey</option><option>Realism</option></select></label><label>Ссылка на публичный Reel<input name="url" type="url" required placeholder="https://www.instagram.com/reel/..."></label><small class="hint">Откройте Reel в Instagram, нажмите «Поделиться» → «Копировать ссылку» и вставьте её сюда.</small><p id="instagramVideoStatus" class="upload-status" aria-live="polite"></p><button class="primary" type="submit">Добавить Reel на сайт</button></form></dialog>
   <dialog id="serviceDialog"><form id="serviceForm"><button type="button" class="close">×</button><input type="hidden" name="id"><p class="eyebrow">УСЛУГА</p><h3>Редактирование</h3><label>Название — русский<input name="title_ru" required></label><label>Название — հայերեն<input name="title_hy"></label><label>Название — English<input name="title_en"></label><label>Цена «от», ֏<input name="price_from" type="number" min="0" required></label><button class="primary" type="submit">Сохранить</button></form></dialog>
 
   <dialog id="certificateDialog">
@@ -168,7 +169,7 @@
   </dialog>
 
   <div id="toast"></div>
-  <script src="admin-v25.js?v=32"></script>
+  <script src="admin-v25.js?v=34"></script>
   <script src="admin-settings-v28.js"></script>
 </body>
 </html>

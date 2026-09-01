@@ -128,8 +128,14 @@ textarea:focus { border-color: var(--red); }
 .work-card video { display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover; background: #080808; }
 .work-card .video-badge { position: absolute; left: 10px; top: 10px; padding: 7px 9px; background: #a91320e8; color: #fff; font: 700 9px/1 Arial, sans-serif; letter-spacing: .12em; }
 .video-admin-grid .work-card { border-color: #6f1a24; background: linear-gradient(145deg,#171111,#100e0e); }
+.toolbar-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+.instagram-video-preview { display: grid; place-items: center; width: 100%; aspect-ratio: 3/4; padding: 28px; color: #fff; text-decoration: none; text-align: center; background: radial-gradient(circle at 30% 20%,#d82d75,transparent 32%),linear-gradient(145deg,#522bc5,#bd256d 52%,#ed702b); }
+.instagram-video-preview strong { display: block; font: 28px Georgia,serif; }
+.instagram-video-preview small { display: block; margin-top: 10px; color: #fff; font: 700 9px/1.4 Arial,sans-serif; letter-spacing: .13em; text-transform: uppercase; }
 
 @media (max-width: 540px) {
   :root { --mobile-admin-nav-height: 126px; }
   .panel aside nav { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .toolbar-actions { width: 100%; display: grid; grid-template-columns: 1fr; }
+  .toolbar-actions .primary, .toolbar-actions .secondary { width: 100%; min-height: 48px; }
 }

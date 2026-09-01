@@ -12,6 +12,9 @@
 .video-gallery .work:after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg,transparent 55%,#000a); }
 .video-gallery .work-play { z-index: 3; }
 .video-gallery .work > b { z-index: 3; }
+.video-gallery .instagram-reel { position: relative; aspect-ratio: 9/16; overflow: hidden; border: 1px solid #ffffff1b; border-radius: 4px; background: #fff; box-shadow: 0 24px 60px #000b; }
+.video-gallery .instagram-reel iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.video-gallery .instagram-reel-label { position: absolute; z-index: 2; left: 10px; top: 10px; padding: 7px 10px; border-radius: 20px; color: #fff; background: linear-gradient(110deg,#5b2dcc,#c52a78 52%,#ef7b28); font: 700 9px/1 Arial,sans-serif; letter-spacing: .1em; pointer-events: none; box-shadow: 0 8px 22px #0007; }
 .artist-modal-stats b > span { display: block; }
 
 .artist-certificates {
