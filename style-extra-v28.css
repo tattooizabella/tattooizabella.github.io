@@ -263,8 +263,8 @@
 .gallery-filter button.active{background:#b71126;color:#fff;box-shadow:0 8px 24px #8d0d1b70}
 .gallery-modal-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.gallery-modal-grid .work{min-height:0;aspect-ratio:4/5;border:1px solid #ffffff17;background:#100d0e;box-shadow:0 16px 42px #0008}.gallery-modal-grid .work img{height:100%;width:100%;object-fit:cover}
 .gallery-more{margin:34px auto 0;display:flex;align-items:center;justify-content:space-between;gap:32px;min-width:min(280px,100%);background:#111;color:#fff;border-color:#ffffff26}.gallery-more[hidden]{display:none}
-.instagram-player-mask{position:relative;width:min(460px,76vw);height:min(78svh,790px);overflow:hidden;background:#050505;border:1px solid #ffffff20;box-shadow:0 30px 100px #000}
-.instagram-player-mask iframe{position:absolute;left:-2%;top:-64px;width:104%;height:calc(100% + 180px);border:0;background:#050505}
+.instagram-player-mask{position:relative;width:min(94vw,calc(86svh * 9 / 16),520px);height:auto;max-height:86svh;aspect-ratio:9/16;overflow:hidden;background:#050505;border:1px solid #ffffff20;box-shadow:0 30px 100px #000}
+.instagram-player-mask iframe{position:absolute;left:0;top:-52px;width:calc(100% + 84px);max-width:none;height:calc(100% + 136px);border:0;background:#050505}
 .instagram-player-mask:after{content:"";position:absolute;z-index:3;left:0;right:0;bottom:0;height:64px;background:linear-gradient(180deg,transparent,#050505 42%,#050505);pointer-events:none}
 .instagram-replay{position:absolute;z-index:4;left:50%;bottom:12px;min-width:180px;min-height:40px;padding:0 18px;transform:translateX(-50%);border:1px solid #d21c32;background:#a70f20eF;color:#fff;font:700 12px/1 "Noto Sans Armenian",Arial,sans-serif;letter-spacing:.04em;cursor:pointer;box-shadow:0 10px 28px #000b}
 .instagram-replay:hover{background:#d0182f}
@@ -316,6 +316,6 @@
   .gallery-modal-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .gallery-modal-grid .work{aspect-ratio:3/4}
   .work-play{width:46px;height:46px;font-size:15px;box-shadow:0 8px 25px #000c,0 0 0 5px #ffffff12}
-  .instagram-card-mask iframe{top:-52px;height:calc(100% + 150px)}.instagram-player-mask{width:min(92vw,440px);height:min(76svh,720px)}.instagram-player-mask iframe{top:-54px;height:calc(100% + 154px)}
+  .instagram-card-mask iframe{top:-52px;height:calc(100% + 150px)}.instagram-player-mask{width:min(94vw,calc(82svh * 9 / 16),460px);height:auto;max-height:82svh;aspect-ratio:9/16}.instagram-player-mask iframe{top:-48px;height:calc(100% + 128px)}
   .master-preview{grid-template-columns:1fr;gap:30px;padding-top:56px!important;padding-bottom:64px!important}.master-preview figure{min-height:360px}.master-preview figure img{width:min(75%,300px)}.master-preview figure span{font-size:clamp(20px,6.5vw,34px)}.master-preview>div>p:not(.kicker){font-size:16px;line-height:1.65}
 }
