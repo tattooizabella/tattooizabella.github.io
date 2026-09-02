@@ -297,10 +297,43 @@
   background:#050505;
   pointer-events:none;
 }
+
+/* v43: visible language selector with country flags */
+.langs{
+  gap:4px;
+  padding:4px;
+  border:1px solid #ffffff24;
+  border-radius:8px;
+  background:#171415e6;
+  box-shadow:0 8px 24px #0008;
+}
+.langs button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  min-width:48px;
+  height:34px;
+  padding:0 8px;
+  border:1px solid transparent;
+  border-radius:5px;
+  color:#bbb;
+  font:700 10px/1 Arial,sans-serif;
+  transition:background .2s,color .2s,border-color .2s,transform .2s;
+}
+.langs button:before{font-size:17px;line-height:1}
+.langs button[data-lang="hy"]:before{content:"🇦🇲"}
+.langs button[data-lang="ru"]:before{content:"🇷🇺"}
+.langs button[data-lang="en"]:before{content:"🇬🇧"}
+.langs button:hover{color:#fff;border-color:#ffffff35;transform:translateY(-1px)}
+.langs button.on{color:#fff;background:#b71126;border-color:#dc2b40;box-shadow:0 5px 16px #b7112655}
 .lightbox.video-error figure:after{content:"Видео временно недоступно. Попробуйте ещё раз позже.";position:absolute;inset:auto 20px 70px;padding:16px;background:#18090ce8;border:1px solid #b71126;color:#fff;text-align:center;font:600 14px/1.4 "Noto Sans Armenian",Arial,sans-serif}
 
 @media(max-width:980px){.gallery-modal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:640px){
+  .langs{gap:2px;padding:3px}
+  .langs button{min-width:38px;height:32px;padding:0 4px;gap:3px;font-size:8px}
+  .langs button:before{font-size:14px}
   #works .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
   #works .gallery .work{aspect-ratio:1!important;border-radius:2px}
   #works .gallery .work img{width:100%;height:100%;object-fit:cover}
