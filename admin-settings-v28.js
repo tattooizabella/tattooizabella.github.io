@@ -23,6 +23,7 @@ const ARTIST_DEFAULTS = {
 
 const TRAINING_DEFAULTS = {
   training_enabled:"true",
+  training_master_id:"primary",
   training_title_ru:"Индивидуальное обучение татуировке",
   training_title_hy:"Անհատական դաջվածքի ուսուցում",
   training_title_en:"Private tattoo training",
