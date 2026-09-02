@@ -321,10 +321,18 @@
   font:700 10px/1 Arial,sans-serif;
   transition:background .2s,color .2s,border-color .2s,transform .2s;
 }
-.langs button:before{font-size:17px;line-height:1}
-.langs button[data-lang="hy"]:before{content:"🇦🇲"}
-.langs button[data-lang="ru"]:before{content:"🇷🇺"}
-.langs button[data-lang="en"]:before{content:"🇬🇧"}
+.langs button:before{
+  content:"";
+  flex:0 0 21px;
+  width:21px;
+  height:14px;
+  border-radius:2px;
+  border:1px solid #ffffff55;
+  box-shadow:0 1px 4px #0008;
+}
+.langs button[data-lang="hy"]:before{background:linear-gradient(to bottom,#d90012 0 33.333%,#0033a0 33.333% 66.666%,#f2a800 66.666%)}
+.langs button[data-lang="ru"]:before{background:linear-gradient(to bottom,#fff 0 33.333%,#0039a6 33.333% 66.666%,#d52b1e 66.666%)}
+.langs button[data-lang="en"]:before{background:linear-gradient(33deg,transparent 42%,#fff 42% 47%,#c8102e 47% 53%,#fff 53% 58%,transparent 58%),linear-gradient(-33deg,transparent 42%,#fff 42% 47%,#c8102e 47% 53%,#fff 53% 58%,transparent 58%),linear-gradient(to right,transparent 36%,#fff 36% 43%,#c8102e 43% 57%,#fff 57% 64%,transparent 64%),linear-gradient(to bottom,transparent 31%,#fff 31% 40%,#c8102e 40% 60%,#fff 60% 69%,transparent 69%),#012169}
 .langs button:hover{color:#fff;border-color:#ffffff35;transform:translateY(-1px)}
 .langs button.on{color:#fff;background:#b71126;border-color:#dc2b40;box-shadow:0 5px 16px #b7112655}
 .lightbox.video-error figure:after{content:"Видео временно недоступно. Попробуйте ещё раз позже.";position:absolute;inset:auto 20px 70px;padding:16px;background:#18090ce8;border:1px solid #b71126;color:#fff;text-align:center;font:600 14px/1.4 "Noto Sans Armenian",Arial,sans-serif}
@@ -333,7 +341,7 @@
 @media(max-width:640px){
   .langs{gap:2px;padding:3px}
   .langs button{min-width:38px;height:32px;padding:0 4px;gap:3px;font-size:8px}
-  .langs button:before{font-size:14px}
+  .langs button:before{flex-basis:18px;width:18px;height:12px}
   #works .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
   #works .gallery .work{aspect-ratio:1!important;border-radius:2px}
   #works .gallery .work img{width:100%;height:100%;object-fit:cover}
