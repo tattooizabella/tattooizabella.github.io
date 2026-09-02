@@ -248,6 +248,7 @@
 .video-gallery .work video,.gallery-modal-grid .work video{width:100%;height:100%;object-fit:cover;background:radial-gradient(circle at 50% 35%,#32131a,#050505)}
 .instagram-card-mask{position:absolute;inset:0;display:block;overflow:hidden;background:#050505;pointer-events:none}
 .instagram-card-mask iframe{position:absolute;left:-2%;top:-62px;width:104%;height:calc(100% + 178px);border:0;background:#050505;pointer-events:none}
+.instagram-card-mask:after{content:"";position:absolute;z-index:2;left:0;right:0;bottom:0;height:58px;background:linear-gradient(180deg,transparent,#050505 38%,#050505);pointer-events:none}
 .work.is-video:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 48%,#000b);pointer-events:none}
 .work-play{position:absolute;z-index:3;left:50%;top:50%;width:58px;height:58px;display:grid;place-items:center;border-radius:50%;transform:translate(-50%,-50%);background:#b71126e8;color:#fff;box-shadow:0 12px 34px #000c,0 0 0 8px #ffffff13;font-size:18px;padding-left:3px;transition:.3s}
 .work:hover .work-play{transform:translate(-50%,-50%) scale(1.1);background:#df1831}
@@ -264,10 +265,16 @@
 .gallery-more{margin:34px auto 0;display:flex;align-items:center;justify-content:space-between;gap:32px;min-width:min(280px,100%);background:#111;color:#fff;border-color:#ffffff26}.gallery-more[hidden]{display:none}
 .instagram-player-mask{position:relative;width:min(460px,76vw);height:min(78svh,790px);overflow:hidden;background:#050505;border:1px solid #ffffff20;box-shadow:0 30px 100px #000}
 .instagram-player-mask iframe{position:absolute;left:-2%;top:-64px;width:104%;height:calc(100% + 180px);border:0;background:#050505}
+.instagram-player-mask:after{content:"";position:absolute;z-index:3;left:0;right:0;bottom:0;height:64px;background:linear-gradient(180deg,transparent,#050505 42%,#050505);pointer-events:none}
+.instagram-replay{position:absolute;z-index:4;left:50%;bottom:12px;min-width:180px;min-height:40px;padding:0 18px;transform:translateX(-50%);border:1px solid #d21c32;background:#a70f20eF;color:#fff;font:700 12px/1 "Noto Sans Armenian",Arial,sans-serif;letter-spacing:.04em;cursor:pointer;box-shadow:0 10px 28px #000b}
+.instagram-replay:hover{background:#d0182f}
 .lightbox.video-error figure:after{content:"Видео временно недоступно. Попробуйте ещё раз позже.";position:absolute;inset:auto 20px 70px;padding:16px;background:#18090ce8;border:1px solid #b71126;color:#fff;text-align:center;font:600 14px/1.4 "Noto Sans Armenian",Arial,sans-serif}
 
 @media(max-width:980px){.gallery-modal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:640px){
+  #works .gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+  #works .gallery .work{aspect-ratio:1!important;border-radius:2px}
+  #works .gallery .work img{width:100%;height:100%;object-fit:cover}
   #works .gallery .work:nth-child(n+5){display:none}
   .video-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}
   .gallery-open-button{min-height:58px;padding:0 20px;font-size:12px}

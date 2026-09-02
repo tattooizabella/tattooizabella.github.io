@@ -3,7 +3,7 @@ const SOCIAL_DEFAULTS = [
   {id:"whatsapp-main",type:"whatsapp",label_ru:"WhatsApp",label_hy:"WhatsApp",label_en:"WhatsApp",display_value:"099 611 966",url:"https://wa.me/37499611966"},
   {id:"telegram-main",type:"telegram",label_ru:"Telegram",label_hy:"Telegram",label_en:"Telegram",display_value:"@tattooizabella",url:"https://t.me/tattooizabella"},
   {id:"instagram-studio",type:"instagram",label_ru:"Instagram Studio",label_hy:"Instagram սրահ",label_en:"Instagram Studio",display_value:"@tattooizabellastudio",url:"https://www.instagram.com/tattooizabellastudio"},
-  {id:"instagram-master",type:"instagram",label_ru:"Instagram Izabella",label_hy:"Instagram Izabella",label_en:"Instagram Izabella",display_value:"@tattooizabella",url:"https://www.instagram.com/tattooizabella"},
+  {id:"instagram-master",type:"instagram",label_ru:"Instagram TATTOOIZABELLA",label_hy:"Instagram TATTOOIZABELLA",label_en:"Instagram TATTOOIZABELLA",display_value:"@tattooizabella",url:"https://www.instagram.com/tattooizabella"},
   {id:"facebook-main",type:"facebook",label_ru:"Facebook",label_hy:"Facebook",label_en:"Facebook",display_value:"tattooizabella",url:"https://www.facebook.com/tattooizabella/"},
   {id:"tiktok-main",type:"tiktok",label_ru:"TikTok",label_hy:"TikTok",label_en:"TikTok",display_value:"@tattooizabella",url:"https://www.tiktok.com/@tattooizabella"},
   {id:"youtube-main",type:"youtube",label_ru:"YouTube",label_hy:"YouTube",label_en:"YouTube",display_value:"@tattooizabella",url:"https://www.youtube.com/@tattooizabella"}

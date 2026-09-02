@@ -133,7 +133,10 @@ textarea:focus { border-color: var(--red); }
 .instagram-video-preview strong { display: block; font: 28px Georgia,serif; }
 .instagram-video-preview small { display: block; margin-top: 10px; color: #fff; font: 700 9px/1.4 Arial,sans-serif; letter-spacing: .13em; text-transform: uppercase; }
 .admin-instagram-mask { position: relative; display: block; width: 100%; aspect-ratio: 3/4; overflow: hidden; background: #080808; }
-.admin-instagram-mask iframe { position: absolute; left: -2%; top: -58px; width: 104%; height: calc(100% + 168px); border: 0; background: #080808; }
+.admin-instagram-mask iframe { position: absolute; left: -2%; top: -58px; width: 104%; height: calc(100% + 168px); border: 0; background: #080808; pointer-events: none; }
+.admin-instagram-mask:after { content: ""; position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: 58px; background: linear-gradient(180deg, transparent, #080808 40%, #080808); pointer-events: none; }
+.card-delete-action { width: 100%; margin-top: 12px; min-height: 42px; border: 1px solid #b91d31; background: #2b0c11; color: #ff9aa7; font: 700 12px/1 Arial,sans-serif; letter-spacing: .05em; cursor: pointer; }
+.card-delete-action:hover { background: #b71126; color: #fff; }
 .training-visibility { max-width: 320px; }
 .training-admin-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:20px; }
 .training-admin-options label { margin:0; }
