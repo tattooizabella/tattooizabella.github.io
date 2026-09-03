@@ -1,7 +1,8 @@
 .artist-modal-copy { overflow-y: auto; }
 .work video { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, filter .5s ease; }
 .work:hover video { transform: scale(1.035); filter: brightness(.72); }
-.work-play { position: absolute; z-index: 2; left: 50%; top: 50%; display: grid; place-items: center; width: 58px; height: 58px; border: 1px solid #ffffff88; border-radius: 50%; background: #a91320dd; color: #fff; font: 18px/1 Arial, sans-serif; transform: translate(-50%,-50%); box-shadow: 0 12px 35px #0008; }
+.work-play { position: absolute; z-index: 2; left: 50%; top: 50%; display: grid; place-items: center; width: 54px; height: 54px; padding: 0; border: 1px solid #ffffffb8; border-radius: 50%; background: #080808a8; color: #fff; font-size: 0; transform: translate(-50%,-50%); box-shadow: 0 12px 34px #000b,0 0 0 5px #0003; backdrop-filter: blur(10px); }
+.work-play:before { content: ""; width: 0; height: 0; margin-left: 4px; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 14px solid #fff; filter: drop-shadow(0 2px 4px #0008); }
 .lightbox figure video { max-width: 100%; max-height: 84svh; background: #000; box-shadow: 0 25px 100px #000; }
 .lightbox figure video[hidden], .lightbox figure img[hidden] { display: none; }
 .video-section { position: relative; overflow: hidden; color: #f7f2ea; background: radial-gradient(circle at 20% 0,#65162055,transparent 35%),linear-gradient(145deg,#12090b,#050505 70%); border-bottom: 1px solid #35151a; }
@@ -250,8 +251,8 @@
 .instagram-card-mask iframe{position:absolute;left:-2%;top:-62px;width:104%;height:calc(100% + 178px);border:0;background:#050505;pointer-events:none}
 .instagram-card-mask:after{content:"";position:absolute;z-index:2;left:0;right:0;bottom:0;height:58px;background:linear-gradient(180deg,transparent,#050505 38%,#050505);pointer-events:none}
 .work.is-video:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 48%,#000b);pointer-events:none}
-.work-play{position:absolute;z-index:3;left:50%;top:50%;width:58px;height:58px;display:grid;place-items:center;border-radius:50%;transform:translate(-50%,-50%);background:#b71126e8;color:#fff;box-shadow:0 12px 34px #000c,0 0 0 8px #ffffff13;font-size:18px;padding-left:3px;transition:.3s}
-.work:hover .work-play{transform:translate(-50%,-50%) scale(1.1);background:#df1831}
+.work-play{position:absolute;z-index:3;left:50%;top:50%;width:54px;height:54px;display:grid;place-items:center;padding:0;border:1px solid #ffffffb8;border-radius:50%;transform:translate(-50%,-50%);background:#080808a8;color:#fff;box-shadow:0 12px 34px #000b,0 0 0 5px #0003;font-size:0;backdrop-filter:blur(10px);transition:transform .3s,background .3s,border-color .3s}
+.work:hover .work-play{transform:translate(-50%,-50%) scale(1.08);background:#050505d8;border-color:#fff}
 
 .gallery-modal{padding:0;background:#050505}.gallery-modal .modal-backdrop{background:#030303f2;backdrop-filter:blur(14px)}
 .gallery-modal-panel{width:100%;height:100svh;max-height:100svh;padding:0 clamp(18px,5vw,80px) 56px;overflow-y:auto;color:#f5f0e9;background:radial-gradient(circle at 88% 5%,#5d111d55,transparent 28%),repeating-linear-gradient(118deg,transparent 0 130px,#ffffff05 131px 132px),#070707;border:0;box-shadow:none;transform:none}
@@ -356,7 +357,8 @@
   .gallery-filter button{padding:0 7px;font-size:11px}
   .gallery-modal-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .gallery-modal-grid .work{aspect-ratio:3/4}
-  .work-play{width:46px;height:46px;font-size:15px;box-shadow:0 8px 25px #000c,0 0 0 5px #ffffff12}
+  .work-play{width:44px;height:44px;box-shadow:0 8px 25px #000c,0 0 0 4px #0003}
+  .work-play:before{border-top-width:7px;border-bottom-width:7px;border-left-width:11px;margin-left:3px}
   .instagram-card-mask iframe{top:-52px;height:calc(100% + 150px)}.instagram-player-mask{width:min(94vw,calc(82svh * 9 / 16),460px);height:auto;max-height:82svh;aspect-ratio:9/16}.instagram-player-mask iframe{top:-48px;height:calc(100% + 128px)}
   .master-preview{grid-template-columns:1fr;gap:30px;padding-top:56px!important;padding-bottom:64px!important}.master-preview figure{min-height:360px}.master-preview figure img{width:min(75%,300px)}.master-preview figure span{font-size:clamp(20px,6.5vw,34px)}.master-preview>div>p:not(.kicker){font-size:16px;line-height:1.65}
 }
